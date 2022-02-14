@@ -11,22 +11,19 @@
         </style>
     </head>
     <body>
-        <audio preload autoplay loop id="music">
-            <source src="mp3/烟火.mp3" type="audio/mpeg">
-       </audio>       
-        <script type="text/javascript">
-            window.onload = function(){
-                     setInterval("toggleSound()",1);
-                }
-        
-            function toggleSound() {
-                        var music = document.getElementById("music");//获取ID  
-                        if (music.paused) { //判读是否播放  
-                            music.paused=false;
-                            music.play(); //没有就播放 
-                        }    
-                }
-        </script>        
+        <audio autoplay="autopaly" loop="loop" id="audios">
+    <source src="mp3/烟火.mp3" type="audio/mp3" />
+</audio>
+<script>
+// 将以下代码添加到js入口函数内即可
+document.addEventListener('click', function() {
+    document.getElementById('audios').play()
+})
+// 将以下代码添加到js入口函数内即可
+document.addEventListener('touchstart', function() {
+    document.getElementById('audios').play()
+})
+</script>
         <script type="text/javascript" src="js/Main.js"></script>
     </body>
 </html>
