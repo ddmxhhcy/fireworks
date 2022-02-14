@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>放烟花</title>
+        <style type="text/css">
+            html,body{
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <audio preload autoplay loop id="music">
+            <source src="mp3/烟火.mp3" type="audio/mpeg">
+       </audio>       
+        <script type="text/javascript">
+            window.onload = function(){
+                     setInterval("toggleSound()",1);
+                }
+        
+            function toggleSound() {
+                        var music = document.getElementById("music");//获取ID  
+                        if (music.paused) { //判读是否播放  
+                            music.paused=false;
+                            music.play(); //没有就播放 
+                        }    
+                }
+        </script>        
+        <script type="text/javascript" src="js/Main.js"></script>
+    </body>
+</html>
